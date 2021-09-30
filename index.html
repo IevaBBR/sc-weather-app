@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather App</title>
+    <script
+      src="https://kit.fontawesome.com/1cbc24ca71.js"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="src/styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  </head>
+  <body>
+    <div class="container mt-4 border border-2 border-secondary rounded">
+      <div class="col-12 mx-4 px-4 py-3 search-for-city">
+        <form class="row-cols-lg-auto">
+          <div class="row g-2">
+            <div class="col-5 search-input">
+              <input
+                id="city"
+                type="text"
+                class="form-control"
+                placeholder="Search for a city"
+              />
+            </div>
+            <div class="col-2">
+              <button
+                id="submit-button"
+                type="submit"
+                class="btn search-button"
+              >
+                🔎
+              </button>
+            </div>
+            <div class="col-1">
+              <button id="toCel-button" type="button" class="btn search-button">
+                °C
+              </button>
+            </div>
+            <div class="col-1">
+              <button
+                id="toFahr-button"
+                type="button"
+                class="btn search-button"
+              >
+                °F
+              </button>
+            </div>
+            <div class="col-2">
+              <button
+                id="find-me-button"
+                type="button"
+                class="btn search-button"
+              >
+                Find me
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+
+      <div class="col-12 mx-auto px-5 py-3 current-city-weather">
+        <div class="row">
+          <div class="col-8">
+            <div class="row">
+              <div id="time" class="col-12 pb-1 day-time">
+                currentTime
+              </div>
+              <div id="searched-city" class="col-12 current-city-name">
+                Riga
+              </div>
+              <div
+                id="weather-description"
+                class="col-12 py-2 weather-descriptor"
+              >
+                partly cloudy
+              </div>
+              <div class="col-12 mx-3 pt-2 meteorological-data">
+                <div class="row">
+                  <div class="col-4 meteo-parameter-name">
+                    Humidity
+                  </div>
+                  <div class="col-4 meteo-parameter-name">
+                    Wind
+                  </div>
+                  <div class="col-4 meteo-parameter-name">
+                    Pressure
+                  </div>
+                  <div id="humidity" class="col-4 meteo-parameter-value">
+                    85%
+                  </div>
+                  <div id="wind" class="col-4 meteo-parameter-value">
+                    5 m/s
+                  </div>
+                  <div id="air-pressure" class="col-4 meteo-parameter-value">
+                    1019 hPa
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-4 pt-4">
+            <div class="row">
+              <div class="col-12 current-city-temperature">
+                <span id="temperature" class="temperature-values">
+                  10°C
+                </span>
+              </div>
+              <div class="col-12 pt-2 current-city-high-low">
+                <span id="high-temp">12°C</span>
+                <span>|</span>
+                <span id="low-temp">2°C</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12 mx-auto px-5 py-3 five-day-forecast">
+        <div class="row">
+          <div class="col five-day-forecast-daily">
+            <div class="row">
+              <div class="col-12 weekday">
+                Mon
+              </div>
+              <div class="col-12 weather-emoji">
+                🌧
+              </div>
+              <div class="col-12 temperature-high">
+                15°C
+              </div>
+              <div class="col-12 temperature-low">
+                5°C
+              </div>
+            </div>
+          </div>
+          <div class="col five-day-forecast-daily border-2 border-start">
+            <div class="row">
+              <div class="col-12 weekday">
+                Tue
+              </div>
+              <div class="col-12 weather-emoji">
+                🌧
+              </div>
+              <div class="col-12 temperature-high">
+                13°C
+              </div>
+              <div class="col-12 temperature-low">
+                2°C
+              </div>
+            </div>
+          </div>
+          <div class="col five-day-forecast-daily border-2 border-start">
+            <div class="row">
+              <div class="col-12 weekday">
+                Wed
+              </div>
+              <div class="col-12 weather-emoji">
+                🌦
+              </div>
+              <div class="col-12 temperature-high">
+                15°C
+              </div>
+              <div class="col-12 temperature-low">
+                5°C
+              </div>
+            </div>
+          </div>
+          <div class="col five-day-forecast-daily border-2 border-start">
+            <div class="row">
+              <div class="col-12 weekday">
+                Thu
+              </div>
+              <div class="col-12 weather-emoji">
+                🌦
+              </div>
+              <div class="col-12 temperature-high">
+                15°C
+              </div>
+              <div class="col-12 temperature-low">
+                5°C
+              </div>
+            </div>
+          </div>
+          <div class="col five-day-forecast-daily border-2 border-start">
+            <div class="row">
+              <div class="col-12 weekday">
+                Fri
+              </div>
+              <div class="col-12 weather-emoji">
+                ☀
+              </div>
+              <div class="col-12 temperature-high">
+                17°C
+              </div>
+              <div class="col-12 temperature-low">
+                10°C
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col px-5 py-3 last-searched-cities">
+        <div class="row">
+          <div class="col-12 mx-2 pb-2 search-text">
+            Last searched for:
+          </div>
+          <div class="d-grid gap-2 col-8 mx-auto">
+            <button
+              class="btn btn-block text-nowrap border-1 px-1 py-2 rounded-3 searched-cities"
+            >
+              Berlin
+            </button>
+
+            <button
+              class="btn btn-block text-nowrap border-1 px-1 py-2 rounded-3 searched-cities"
+            >
+              Dublin
+            </button>
+
+            <button
+              class="btn btn-block text-nowrap border-1 px-1 py-2 rounded-3 searched-cities"
+            >
+              Copenhagen
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="src/script.js"></script>
+  </body>
+</html>

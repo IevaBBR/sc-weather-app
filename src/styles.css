@@ -1,0 +1,105 @@
+body {
+    background-image: url("images/mountains2.jpg");
+    background-position: top;
+    background-repeat: no-repeat;
+  }
+  
+  .container {
+    max-width: 600px;
+    margin: 0 auto;
+    background-image: linear-gradient(
+        rgba(255, 255, 255, 0.2),
+        rgba(255, 255, 255, 0.2)
+      ),
+      url("images/sunny3.jpg");
+    background-repeat: no-repeat;
+    background-position: right;
+    font-family: "Oswald", sanserif;
+  }
+  
+  .current-city-high-low,
+  .current-city-name,
+  .current-city-temperature,
+  .day-time,
+  .meteo-parameter-name,
+  .meteo-parameter-value,
+  .searched-cities,
+  .weather-descriptor {
+    color: rgb(8, 32, 50);
+    text-align: center;
+  }
+  
+  .current-city-name,
+  .current-city-temperature,
+  .meteo-parameter-name,
+  .searched-cities,
+  .search-text {
+    text-transform: uppercase;
+  }
+  
+  .current-city-name,
+  .current-city-temperature {
+    font-size: 48px;
+    line-height: 52px;
+    font-weight: bold;
+  }
+  
+  .current-city-high-low,
+  .meteo-parameter-value {
+    font-size: 18px;
+    font-weight: bolder;
+  }
+  
+  .searched-cities,
+  .temperature-high {
+    font-size: 16px;
+    line-height: 18px;
+  }
+  
+  .day-time,
+  .search-text,
+  .temperature-low,
+  .weather-descriptor {
+    font-size: 14px;
+  }
+  
+  .temperature-high,
+  .weather-descriptor,
+  .weekday {
+    font-weight: bolder;
+  }
+  
+  .temperature-high,
+  .temperature-low {
+    color: rgb(44, 57, 75);
+  }
+  
+  .weather-emoji,
+  .weekday {
+    color: rgb(51, 71, 86);
+  }
+  
+  .five-day-forecast {
+    text-align: center;
+  }
+  
+  .meteo-parameter-name {
+    font-size: 12px;
+  }
+  
+  .weather-emoji {
+    font-size: 24px;
+  }
+  
+  .btn {
+    border-color: rgb(51, 71, 86);
+    background-color: rgb(255, 255, 255, 0.3);
+    transition: ease 150ms;
+  }
+  
+  .btn:hover {
+    border-color: rgb(51, 71, 86);
+    background-color: rgb(44, 57, 75);
+    color: whitesmoke;
+  }
+  
