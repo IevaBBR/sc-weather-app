@@ -17,6 +17,9 @@ body {
     font-family: "Oswald", sanserif;
   }
   
+  .caption,
+  a:link,
+  a:visited,
   .current-city-high-low,
   .current-city-name,
   .current-city-temperature,
@@ -44,6 +47,7 @@ body {
     font-weight: bold;
   }
   
+  .caption,
   .current-city-high-low,
   .meteo-parameter-value {
     font-size: 18px;
