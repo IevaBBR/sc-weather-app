@@ -61,6 +61,10 @@ function showTime() {
   
     let pressure = document.querySelector("#air-pressure");
     pressure.innerHTML = `${response.data.main.pressure} hPa`;
+
+    let weatherIcon = document.querySelector("#weather-icon");
+    weatherIcon.setAttribute("src", `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
+    weatherIcon.setAttribute("alt", response.data.weather[0].description);
   }
   
   ////////////////////////////////////////////
