@@ -7,13 +7,7 @@ body {
   .container {
     max-width: 600px;
     margin: 0 auto;
-    background-image: linear-gradient(
-        rgba(255, 255, 255, 0.2),
-        rgba(255, 255, 255, 0.2)
-      ),
-      url("images/sunny3.jpg");
-    background-repeat: no-repeat;
-    background-position: right;
+    background-color: rgb(69, 160, 206);
     font-family: "Oswald", sanserif;
   }
   
@@ -28,7 +22,7 @@ body {
   .meteo-parameter-value,
   .searched-cities,
   .weather-descriptor {
-    color: rgb(8, 32, 50);
+    color: rgb(233, 233, 233);
     text-align: center;
   }
   
@@ -77,6 +71,10 @@ body {
   .temperature-low {
     color: rgb(44, 57, 75);
   }
+
+  .current-city-name {
+    vertical-align: middle;
+  }
   
   .weather-emoji,
   .weekday {
@@ -87,14 +85,28 @@ body {
     text-align: center;
   }
   
-  .meteo-parameter-name {
+  .meteo-parameter-name
+  .units {
     font-size: 12px;
+  }
+
+  .units .acive {
+    cursor: default;
+
+  }
+
+  .units .acive:hover {
+    text-decoration: none;
   }
   
   .weather-emoji {
     font-size: 24px;
   }
-  
+
+  .units {
+    vertical-align: top;
+  }
+
   .btn {
     border-color: rgb(51, 71, 86);
     background-color: rgb(255, 255, 255, 0.3);

@@ -29,7 +29,7 @@
       <div class="col-12 mx-4 px-4 py-3 search-for-city">
         <form class="row-cols-lg-auto">
           <div class="row g-2">
-            <div class="col-5 search-input">
+            <div class="col-6 search-input">
               <input
                 id="city"
                 type="text"
@@ -46,21 +46,7 @@
                 🔎
               </button>
             </div>
-            <div class="col-1">
-              <button id="toCel-button" type="button" class="btn search-button">
-                °C
-              </button>
-            </div>
-            <div class="col-1">
-              <button
-                id="toFahr-button"
-                type="button"
-                class="btn search-button"
-              >
-                °F
-              </button>
-            </div>
-            <div class="col-2">
+            <div class="col-3">
               <button
                 id="find-me-button"
                 type="button"
@@ -77,20 +63,20 @@
         <div class="row">
           <div class="col-8">
             <div class="row">
-              <div id="time" class="col-12 pb-1 day-time">
+              <div id="time" class="col-12 day-time">
                 currentTime
               </div>
-              <div class="col-12">
-                <div class="col-3">
-                  <img src="http://openweathermap.org/img/wn/10d@2x.png" alt="Weather icon" id=weather-icon>
-                </div>
-                <div id="searched-city" class="col-9 current-city-name">
+              <div class="col-12 align-items-center">
+                <span>
+                  <img src="http://openweathermap.org/img/wn/10d@2x.png" alt="Weather icon" id=weather-icon class="icon">
+                </span>
+                <span id="searched-city" class="current-city-name">
                   Riga
-                </div>
+                </span>
               </div>
               <div
                 id="weather-description"
-                class="col-12 py-2 weather-descriptor"
+                class="col-12 weather-descriptor"
               >
                 partly cloudy
               </div>
@@ -118,11 +104,14 @@
               </div>
             </div>
           </div>
-          <div class="col-4 pt-4">
+          <div class="col-4 pt-5">
             <div class="row">
-              <div class="col-12 current-city-temperature">
-                <span id="temperature" class="temperature-values">
-                  10°C
+              <div class="col-12">
+                <span id="temperature" class="temperature-values current-city-temperature">
+                  10
+                </span>
+                <span class="units">
+                  <a id=celsius-link class=active href="#">°C</a> | <a id=fahrenheit-link href="#">°F</a>
                 </span>
               </div>
               <div class="col-12 pt-2 current-city-high-low">
@@ -219,35 +208,12 @@
           </div>
         </div>
       </div>
-
-      <div class="col px-5 py-3 last-searched-cities">
-        <div class="row">
-          <div class="col-12 mx-2 pb-2 search-text">
-            Last searched for:
-          </div>
-          <div class="d-grid gap-2 col-8 mx-auto">
-            <button
-              class="btn btn-block text-nowrap border-1 px-1 py-2 rounded-3 searched-cities"
-            >
-              Berlin
-            </button>
-
-            <button
-              class="btn btn-block text-nowrap border-1 px-1 py-2 rounded-3 searched-cities"
-            >
-              Dublin
-            </button>
-
-            <button
-              class="btn btn-block text-nowrap border-1 px-1 py-2 rounded-3 searched-cities"
-            >
-              Copenhagen
-            </button>
-          </div>
-        </div>
-      </div>
     </div>
-    <div class="caption"> <a href="https://github.com/IevaBBR/sc-weather-app.git" target="_blank">Open-source code</a> by Ieva Bebre</div>
+    <div class="caption"> 
+      <small>
+        <a href="https://github.com/IevaBBR/sc-weather-app.git" target="_blank">Open-source code</a> by Ieva Bebre
+      </small>
+    </div>
 
     <script src="src/script.js"></script>
   </body>
