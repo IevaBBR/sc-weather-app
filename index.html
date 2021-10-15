@@ -24,12 +24,14 @@
     />
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
   </head>
+
+  
   <body>
-    <div class="container mt-4 border border-2 border-secondary rounded">
-      <div class="col-12 mx-4 px-4 py-3 search-for-city">
+    <div class="container mt-4 border border-2 border-primary rounded">
+      <div class="col-12 mx-4 py-3 search-for-city">
         <form class="row-cols-lg-auto">
           <div class="row g-2">
-            <div class="col-6 search-input">
+            <div class="col-7 search-input">
               <input
                 id="city"
                 type="text"
@@ -59,24 +61,19 @@
         </form>
       </div>
 
-      <div class="col-12 mx-auto px-5 py-3 current-city-weather">
+      <div class="col-12 mx-auto current-city-weather">
         <div class="row">
-          <div class="col-8">
+          <div class="col-7">
             <div class="row">
-              <div id="time" class="col-12 day-time">
+              <div id="time" class="col-12 day-time pb-2">
                 currentTime
               </div>
-              <div class="col-12 align-items-center">
-                <span>
-                  <img src="http://openweathermap.org/img/wn/10d@2x.png" alt="Weather icon" id=weather-icon class="icon">
-                </span>
-                <span id="searched-city" class="current-city-name">
-                  Riga
-                </span>
+              <div id="searched-city" class="col-12 align-items-center current-city-name pb-1">
+                Riga
               </div>
               <div
                 id="weather-description"
-                class="col-12 weather-descriptor"
+                class="col-12 weather-descriptor pb-2"
               >
                 partly cloudy
               </div>
@@ -104,17 +101,20 @@
               </div>
             </div>
           </div>
-          <div class="col-4 pt-5">
+          <div class="col-5">
             <div class="row">
-              <div class="col-12">
-                <span id="temperature" class="temperature-values current-city-temperature">
+              <div class="col-12 gy-1">
+                <span class="g-0">
+                  <img src="http://openweathermap.org/img/wn/10d@2x.png" alt="Weather icon" id=weather-icon class="icon">
+                </span>
+                <span id="temperature" class="temperature-values current-city-temperature pt-5">
                   10
                 </span>
-                <span class="units">
+                <span class="units g-0">
                   <a id=celsius-link class=active href="#">°C</a> | <a id=fahrenheit-link href="#">°F</a>
                 </span>
               </div>
-              <div class="col-12 pt-2 current-city-high-low">
+              <div class="col-12 current-city-high-low">
                 <span id="high-temp">12°C</span>
                 <span>|</span>
                 <span id="low-temp">2°C</span>
@@ -124,7 +124,7 @@
         </div>
       </div>
 
-      <div class="col-12 mx-auto px-5 py-3 five-day-forecast">
+      <div class="col-12 mx-auto py-4 five-day-forecast">
         <div class="row">
           <div class="col five-day-forecast-daily">
             <div class="row">

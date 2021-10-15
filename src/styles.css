@@ -36,18 +36,16 @@ body {
   
   .current-city-name,
   .current-city-temperature {
-    font-size: 48px;
-    line-height: 52px;
-    font-weight: bold;
+    font-size: 42px;
+    line-height: 46px;
   }
   
   .caption,
-  .current-city-high-low,
   .meteo-parameter-value {
-    font-size: 18px;
-    font-weight: bolder;
+    font-size: 20px;
   }
   
+  .current-city-high-low,
   .searched-cities,
   .temperature-high {
     font-size: 16px;
@@ -60,19 +58,8 @@ body {
   .weather-descriptor {
     font-size: 14px;
   }
-  
-  .temperature-high,
-  .weather-descriptor,
-  .weekday {
-    font-weight: bolder;
-  }
-  
-  .temperature-high,
-  .temperature-low {
-    color: rgb(44, 57, 75);
-  }
 
-  .current-city-name {
+  .current-city-temperature{
     vertical-align: middle;
   }
   
@@ -85,26 +72,23 @@ body {
     text-align: center;
   }
   
-  .meteo-parameter-name
+  .meteo-parameter-name,
   .units {
-    font-size: 12px;
+    font-size: 14px;
   }
 
-  .units .acive {
+  .units .active {
     cursor: default;
-
-  }
-
-  .units .acive:hover {
-    text-decoration: none;
+    text-decoration:none;
+    font-size: 20px;
   }
   
   .weather-emoji {
     font-size: 24px;
   }
 
-  .units {
-    vertical-align: top;
+  .icon {
+    width: 90px;
   }
 
   .btn {

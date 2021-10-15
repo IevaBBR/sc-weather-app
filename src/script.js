@@ -25,13 +25,11 @@ function showTime() {
     let currentMinutes = returnMinutes();
   
     let timeBox = document.querySelector("#time");
-    timeBox.innerHTML = `${currentDay} ${currentHours}:${currentMinutes}`;
+    timeBox.innerHTML = `Last updated: ${currentDay} ${currentHours}:${currentMinutes}`;
   }
   showTime();
-  
-  ////////////////////////////////////////////
-  // Week 5
-  ////////////////////////////////////////////
+
+
   
   function showWeather(response) {
     celsiusTemperature = response.data.main.temp;
@@ -104,7 +102,7 @@ function showTime() {
   let findMeButton = document.querySelector("#find-me-button");
   findMeButton.addEventListener("click", receiveCurrentLocation);
 
-    ////////////////////////////////////////////
+  ////////////////////////////////////////////
   // Temperature conversion
   ////////////////////////////////////////////
   
@@ -125,7 +123,6 @@ function showTime() {
     temperatureNow.innerHTML = Math.round(celsiusTemperature);
   }
 
-
   let celsiusTemperature = null;
 
   let fahrenheitLink = document.querySelector("#fahrenheit-link");
@@ -133,4 +130,6 @@ function showTime() {
 
   let celsiusLink = document.querySelector("#celsius-link");
   celsiusLink.addEventListener("click", showCelsiusTemperature);
+  
+
   
