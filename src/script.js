@@ -29,9 +29,65 @@ function showTime() {
   }
   showTime();
 
+  function formatForecastDay(timestamp) {
+    let date = new Date(timestamp*1000);
+    let day =  date.getDay();
+    let days = [
+      "Sun",
+      "Mon",
+      "Tue",
+      "Wed",
+      "Thu",
+      "Fri",
+      "Sat"
+    ];
+    return days[day];
+
+  }
+
+  function displayForecast(response) {
+    let forecast = response.data.daily;
+
+    let forecastElement = document.querySelector("#five-day-forecast");
+    
+    let days = ["Thu", "Fri", "Sat", "Sun", "Mon"];
+    
+    let forecastHTML = `<div class="row justify-content-center">`;
+    forecast.forEach(function(forecastDay, index) {
+      if (index > 0 && index < 7) {
+      forecastHTML = forecastHTML + 
+      `
+        <div class="col-2">
+          <div class="weekday">${formatForecastDay(forecastDay.dt)}</div>
+          <img 
+            src="http://openweathermap.org/img/wn/${forecastDay.weather[0].icon}@2x.png" 
+            alt=${forecastDay.weather[0].description} 
+            class="forecast-icon"
+          >
+          <div>
+            <span class="temperature-high">${Math.round(forecastDay.temp.max)}°</span>
+            <span> | </span>
+            <span class="temperature-low">${Math.round(forecastDay.temp.min)}°</span>
+          </div>
+        </div>
+      `;} 
+    })
+
+    forecastHTML = forecastHTML + `</div>`
+
+    forecastElement.innerHTML = forecastHTML;
+  }
+
+  function getForecast(coordinates) {
+    let apiKey = "97f8e93f00107773f88eafd933ce86b7";
+    let units = "metric";
+    let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=${units}`;
+    console.log(apiUrl);
+    axios.get(apiUrl).then(displayForecast);
+  }
 
 
-  
+
   function showWeather(response) {
     celsiusTemperature = response.data.main.temp;
 
@@ -66,6 +122,8 @@ function showTime() {
     let weatherIcon = document.querySelector("#weather-icon");
     weatherIcon.setAttribute("src", `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
     weatherIcon.setAttribute("alt", response.data.weather[0].description);
+
+    getForecast(response.data.coord);
   }
   
   ////////////////////////////////////////////
@@ -132,34 +190,6 @@ function showTime() {
   let celsiusLink = document.querySelector("#celsius-link");
   celsiusLink.addEventListener("click", showCelsiusTemperature);
   
-  function displayForecast() {
-    let forecastElement = document.querySelector("#5-day-forecast");
 
-    let forecastHTML = `<div class="row">`;
-    let days = ["Thu", "Fri", "Sat", "Sun", "Mon"];
 
-    days.forEach(function(day) {
-      forecastHTML = forecastHTML + `
-        <div class="col five-day-forecast-daily">
-          <div class="col weekday">
-            Mon
-          </div>
-          <div class="col weather-emoji">
-            🌧
-          </div>
-          <div class="col temperature-high">
-            15°C
-          </div>
-          <div class="col temperature-low">
-            5°C
-          </div>
-        </div>
-      `; 
-    })
-
-    forecastHTML = forecastHTML + `</div>`
-
-    forecastElement.innerHTML = forecastHTML;
-  }
-  displayForecast();
   
