@@ -30,6 +30,7 @@ function showTime() {
   showTime();
 
 
+
   
   function showWeather(response) {
     celsiusTemperature = response.data.main.temp;
@@ -131,5 +132,34 @@ function showTime() {
   let celsiusLink = document.querySelector("#celsius-link");
   celsiusLink.addEventListener("click", showCelsiusTemperature);
   
+  function displayForecast() {
+    let forecastElement = document.querySelector("#5-day-forecast");
 
+    let forecastHTML = `<div class="row">`;
+    let days = ["Thu", "Fri", "Sat", "Sun", "Mon"];
+
+    days.forEach(function(day) {
+      forecastHTML = forecastHTML + `
+        <div class="col five-day-forecast-daily">
+          <div class="col weekday">
+            Mon
+          </div>
+          <div class="col weather-emoji">
+            🌧
+          </div>
+          <div class="col temperature-high">
+            15°C
+          </div>
+          <div class="col temperature-low">
+            5°C
+          </div>
+        </div>
+      `; 
+    })
+
+    forecastHTML = forecastHTML + `</div>`
+
+    forecastElement.innerHTML = forecastHTML;
+  }
+  displayForecast();
   
