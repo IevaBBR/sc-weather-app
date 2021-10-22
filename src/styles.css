@@ -72,20 +72,14 @@ body {
     text-align: center;
   }
   
-  .meteo-parameter-name,
-  .units {
+  .meteo-parameter-name {
     font-size: 14px;
   }
 
-  .units .active {
-    cursor: default;
-    text-decoration:none;
+  .units {
     font-size: 20px;
   }
-  
-  .weather-emoji {
-    font-size: 24px;
-  }
+
 
   .icon {
     width: 90px;

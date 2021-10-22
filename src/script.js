@@ -161,34 +161,7 @@ function showTime() {
   let findMeButton = document.querySelector("#find-me-button");
   findMeButton.addEventListener("click", receiveCurrentLocation);
 
-  ////////////////////////////////////////////
-  // Temperature conversion
-  ////////////////////////////////////////////
-  
-  function showFahrenheitTemperature(event) {
-    event.preventDefault();
-    celsiusLink.classList.remove("active");
-    fahrenheitLink.classList.add("active");
-    let temperatureNow = document.querySelector("#temperature");
-    let fahrenheitTemperature = (celsiusTemperature*9/5)+32;
-    temperatureNow.innerHTML = Math.round(fahrenheitTemperature);
-  }
 
-  function showCelsiusTemperature(event) {
-    event.preventDefault();
-    celsiusLink.classList.add("active");
-    fahrenheitLink.classList.remove("active");
-    let temperatureNow = document.querySelector("#temperature");
-    temperatureNow.innerHTML = Math.round(celsiusTemperature);
-  }
-
-  let celsiusTemperature = null;
-
-  let fahrenheitLink = document.querySelector("#fahrenheit-link");
-  fahrenheitLink.addEventListener("click", showFahrenheitTemperature);
-
-  let celsiusLink = document.querySelector("#celsius-link");
-  celsiusLink.addEventListener("click", showCelsiusTemperature);
   
 
 
