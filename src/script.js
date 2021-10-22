@@ -42,7 +42,6 @@ function showTime() {
       "Sat"
     ];
     return days[day];
-
   }
 
   function displayForecast(response) {
@@ -82,7 +81,6 @@ function showTime() {
     let apiKey = "97f8e93f00107773f88eafd933ce86b7";
     let units = "metric";
     let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=${units}`;
-    console.log(apiUrl);
     axios.get(apiUrl).then(displayForecast);
   }
 
@@ -125,27 +123,29 @@ function showTime() {
 
     getForecast(response.data.coord);
   }
-  
-  ////////////////////////////////////////////
-  // By City Name
-  ////////////////////////////////////////////
-  
-  function retrieveCityWeather(event) {
-    event.preventDefault();
-    let inputCity = document.querySelector("#city");
+
+
+
+  function searchCity(city) {
     let apiKey = "97f8e93f00107773f88eafd933ce86b7";
     let units = "metric";
-    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${inputCity.value}&appid=${apiKey}&units=${units}`;
+    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${units}`;
     axios.get(`${apiUrl}&appid=${apiKey}`).then(showWeather);
   }
-  
+
+  function submitSearch(event) {
+    event.preventDefault();
+    let inputCity = document.querySelector("#city");
+    searchCity(inputCity.value);
+  }
+
   let yourSearch = document.querySelector("form");
-  yourSearch.addEventListener("submit", retrieveCityWeather);
+  yourSearch.addEventListener("submit", submitSearch);
+
+  searchCity("Svalbard");
   
-  ////////////////////////////////////////////
-  // By Coordinates
-  ////////////////////////////////////////////
-  
+
+
   function displayTempByCoords(position) {
     let units = "metric";
     let apiKey = "97f8e93f00107773f88eafd933ce86b7";
@@ -160,9 +160,3 @@ function showTime() {
   
   let findMeButton = document.querySelector("#find-me-button");
   findMeButton.addEventListener("click", receiveCurrentLocation);
-
-
-  
-
-
-  

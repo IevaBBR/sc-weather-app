@@ -11,9 +11,9 @@ body {
     font-family: "Oswald", sanserif;
   }
   
-  .caption,
   a:link,
   a:visited,
+  .caption,
   .current-city-high-low,
   .current-city-name,
   .current-city-temperature,
@@ -40,11 +40,6 @@ body {
     line-height: 46px;
   }
   
-  .caption,
-  .meteo-parameter-value {
-    font-size: 20px;
-  }
-  
   .current-city-high-low,
   .searched-cities,
   .temperature-high {
@@ -59,34 +54,9 @@ body {
     font-size: 14px;
   }
 
-  .current-city-temperature{
-    vertical-align: middle;
-  }
-  
   .weather-emoji,
   .weekday {
     color: rgb(51, 71, 86);
-  }
-  
-  .five-day-forecast {
-    text-align: center;
-  }
-  
-  .meteo-parameter-name {
-    font-size: 14px;
-  }
-
-  .units {
-    font-size: 20px;
-  }
-
-
-  .icon {
-    width: 90px;
-  }
-
-  .forecast-icon {
-    width: 60px;
   }
 
   .btn {
@@ -101,3 +71,28 @@ body {
     color: whitesmoke;
   }
   
+  .five-day-forecast {
+    text-align: center;
+  }
+
+  .forecast-icon {
+    width: 60px;
+  }
+
+  .icon {
+    width: 90px;
+  }
+
+  .meteo-parameter-name {
+    font-size: 14px;
+  }
+
+  .meteo-parameter-value {
+    font-size: 20px;
+  }
+
+  .units {
+    font-size: 22px;
+    color: rgb(233, 233, 233);
+    text-transform: uppercase;
+  }
